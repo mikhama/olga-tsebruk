@@ -241,7 +241,7 @@ nav {
 }
 
 .about-image img:hover {
-    transform: scale(1.02) translateY(-4.5px);
+    transform: scale(1.02) translateY(-4.8px);
 }
 
 .about-text {
@@ -502,15 +502,21 @@ footer {
     }
 
     .about-content {
-        flex-direction: column;
+        flex-direction: column-reverse;
         padding: 2rem;
         min-height: auto;
     }
 
     .about-image {
-        position: static;
-        width: 250px;
+        position: relative;
+        width: 270px;
+        bottom: -135px;
+        margin-top: -8rem;
         margin-bottom: 2rem;
+    }
+    
+    .about-image img:hover {
+        transform: scale(1.02) translateY(-3px);
     }
 
     .about-text {
