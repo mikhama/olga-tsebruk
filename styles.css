@@ -65,20 +65,32 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover;
-    background-position: center;
+    background: 
+        linear-gradient(45deg,
+            #050400 0%,
+            #140d07 20%,
+            #271509 65%,
+            #311b0d 75%,
+            #491b0c 100%
+        );
+    background-blend-mode: overlay, overlay, normal;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     padding: 0 1rem;
+    padding-top: 4rem;
+    min-height: 100vh;
+    position: relative;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    min-height: calc(100vh - 4rem);
 }
 
 .hero h1 {
@@ -99,10 +111,13 @@ nav {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .cta-button:hover {
     background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 /* Text Types Section */
@@ -202,38 +217,69 @@ nav {
 }
 
 .about-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 3rem;
+    padding: 3rem;
+    color: white;
+    margin-bottom: 2rem;
+    position: relative;
+    min-height: calc(100vh - 4rem - 4rem);
 }
 
 .about-image {
-    flex: 1;
-    max-width: 250px;
-    width: 250px;
+    position: absolute;
+    bottom: -71px;
+    left: 0;
+    width: 400px;
 }
 
 .about-image img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02) translateY(-4.5px);
 }
 
 .about-text {
-    flex: 2;
+    flex: 1;
+    text-align: left;
+    padding-left: 370px;
 }
 
 .about-text h2 {
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
 }
 
 .about-text p {
-    margin-bottom: 15px;
+    font-size: 1.1rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-text .cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.about-text .cta-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Process Section */
@@ -457,12 +503,32 @@ footer {
 
     .about-content {
         flex-direction: column;
-        text-align: center;
+        padding: 2rem;
+        min-height: auto;
     }
 
     .about-image {
-        max-width: 300px;
-        margin-bottom: 30px;
+        position: static;
+        width: 250px;
+        margin-bottom: 2rem;
+    }
+
+    .about-text {
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .about-text .cta-button {
+        width: 100%;
+        text-align: center;
     }
 
     .examples-grid {
